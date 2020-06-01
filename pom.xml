@@ -1,0 +1,188 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>mavenProject</groupId>
+  <artifactId>mavenProject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+     <properties>
+        <appium.version>1.15.1</appium.version>
+        <testng.version>7.0.0</testng.version>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
+    <skipTests>true</skipTests>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- Appium -->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+        </dependency>
+
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+  </dependency>
+
+        <!-- testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        
+        <!-- Log4J -->      
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>2.13.0</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>2.13.0</version>
+  </dependency>
+  
+  			<!-- Jackson for YAML -->
+  <dependency>
+    <groupId>com.fasterxml.jackson.dataformat</groupId>
+    <artifactId>jackson-dataformat-yaml</artifactId>
+    <version>2.10.2</version>
+  </dependency>
+  <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.10.2</version>
+  </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+    	<dependencies>
+    		<dependency>
+    			<groupId>io.appium</groupId>
+    			<artifactId>java-client</artifactId>
+    			<version>7.3.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.seleniumhq.selenium</groupId>
+    			<artifactId>selenium-java</artifactId>
+    			<version>3.141.59</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.apache.commons</groupId>
+    			<artifactId>commons-lang3</artifactId>
+    			<version>3.8.1</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.testng</groupId>
+    			<artifactId>testng</artifactId>
+    			<version>${testng.version}</version>
+    		</dependency>
+
+    		<!-- JUnit -->
+			<dependency>
+    			<groupId>junit</groupId>
+    			<artifactId>junit</artifactId>
+    			<version>4.10</version>
+    			<scope>test</scope>
+			</dependency>
+
+    		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>3.0</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.apache.httpcomponents</groupId>
+  			<artifactId>httpclient</artifactId>
+  			<version>4.5.10</version>
+		</dependency>
+
+		<dependency>
+  			<groupId>org.slf4j</groupId>
+  			<artifactId>slf4j-simple</artifactId>
+  			<version>1.7.21</version>
+		</dependency>
+    	</dependencies>
+    </dependencyManagement>
+
+    <build>
+       <plugins>
+              <plugin>
+                     <artifactId>maven-compiler-plugin</artifactId>
+                     <version>3.3</version>
+                     <configuration>
+                           <source>1.7</source>
+                           <target>1.7</target>
+                     </configuration>
+              </plugin>
+              <plugin>
+                     <groupId>org.apache.maven.plugins</groupId>
+                     <artifactId>maven-surefire-plugin</artifactId>
+                     <version>2.16</version>
+                     <configuration>
+                           <suiteXmlFiles>
+                                  <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                           </suiteXmlFiles>
+                           <skipTests>${skipTests}</skipTests>
+                           <testFailureIgnore>true</testFailureIgnore>
+                  </configuration>
+              </plugin>
+       </plugins>
+       <resources>
+              <resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+				<filtering>true</filtering>
+				<targetPath>../test-classes/</targetPath>
+			</resource>
+       </resources>
+</build>
+
+	<profiles>
+
+		<profile>
+			<id>RD86</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<property>
+					<name>device.name</name>
+					<value>RD86</value>
+				</property>
+			</activation>
+			<properties>
+				<dut.config>NATIVE</dut.config>
+				<device.name>RD86</device.name>
+				<udid>RD86300079</udid>
+				<platform.name>Android</platform.name>
+				<base.pkg>com.android.settings</base.pkg>
+				<application.activity>com.android.settings.Settings</application.activity>
+				<new.command.timeout>300</new.command.timeout>
+				<appium.server.port>4725</appium.server.port>
+				<adb.port>5037</adb.port>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>WEB</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+
+			</activation>
+			<properties>
+				<web.browser>Chrome</web.browser>
+				<os.id>Windows</os.id>
+				<os.version>10</os.version>
+				<web.qa.id>QA002</web.qa.id>
+			</properties>	
+		</profile>
+	</profiles>
+</project>
