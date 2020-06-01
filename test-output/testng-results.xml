@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="11278" started-at="2020-06-01T17:44:49 EDT" finished-at="2020-06-01T17:45:00 EDT">
+    <groups>
+      <group name="functional">
+        <method signature="TestWebChromeBrowser.testMethod(com.data.FromYAMLData)[pri:0, instance:com.tests.TestWebChromeBrowser@614ddd49]" name="testMethod" class="com.tests.TestWebChromeBrowser"/>
+      </group> <!-- functional -->
+    </groups>
+    <test name="Default test" duration-ms="11278" started-at="2020-06-01T17:44:49 EDT" finished-at="2020-06-01T17:45:00 EDT">
+      <class name="com.tests.TestWebChromeBrowser">
+        <test-method status="PASS" signature="initAutomation()[pri:0, instance:com.tests.TestWebChromeBrowser@614ddd49]" name="initAutomation" is-config="true" duration-ms="6979" started-at="2020-06-01T17:44:49 EDT" finished-at="2020-06-01T17:44:56 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initAutomation -->
+        <test-method status="PASS" signature="testMethod(com.data.FromYAMLData)[pri:0, instance:com.tests.TestWebChromeBrowser@614ddd49]" name="testMethod" duration-ms="3483" started-at="2020-06-01T17:44:56 EDT" data-provider="Datasets" finished-at="2020-06-01T17:45:00 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[
+url: https://www.youtube.com
+login: admin
+password: admin
+]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethod -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.tests.TestWebChromeBrowser@614ddd49]" name="quit" is-config="true" duration-ms="602" started-at="2020-06-01T17:45:00 EDT" finished-at="2020-06-01T17:45:00 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- com.tests.TestWebChromeBrowser -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
