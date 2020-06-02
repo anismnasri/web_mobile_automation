@@ -13,7 +13,7 @@ To run this project need install on Wiondows environment:
   6- Eclipse and in this install TestNG
   7- and add the environment variables to your $PATH
 ```
-  Need same modification (like url or something) if you want clone this project in Linux machine.
+  Need some modification (like url or something) if you want clone this project in Linux machine.
   
   ### Philosophy: 
   
