@@ -19,7 +19,7 @@ To run this project need install on Wiondows environment:
   
   The design of project is based with three important parts:
   
-  * The same test can be used with different data sets in YAML files \n
+  * The same test can be used with different data sets in YAML files
   * Inheritance class for screen , if there is more version can change any screen you can just create new screen.
   * Properties dependency from POM.xml of global project to set global data used for project like browser for web or android version for mobile ...
   
