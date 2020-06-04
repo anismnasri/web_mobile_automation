@@ -10,7 +10,7 @@ To run this project need install on Wiondows environment:
   3- maven
   4- Node JS
   5- appium 
-  6- Eclipse and in this install TestNG
+  6- Eclipse and install the plugin TestNG
   7- and add the environment variables to your $PATH
 ```
   Need some modification (like url or something) if you want clone this project in Linux machine.
